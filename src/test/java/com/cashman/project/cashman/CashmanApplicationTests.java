@@ -45,10 +45,33 @@ public class CashmanApplicationTests {
 		Notes notes = new Notes();
 		notes.setFifty(20);
 		notes.setTwenty(40);
-		
+
 		cashmanService.addCash(notes);
-		System.out.println("<=>"+notesInventry);
-		assertEquals(notesInventry.getTwenty()+notesInventry.getFifty(), cashUtil.strToInt(Integer.toString(notes.getTwenty()))+cashUtil.strToInt(Integer.toString(notes.getFifty())));
+		System.out.println("<=>" + notesInventry);
+		assertEquals(notesInventry.getTwenty() + notesInventry.getFifty(),
+				cashUtil.strToInt(Integer.toString(notes.getTwenty()))
+						+ cashUtil.strToInt(Integer.toString(notes.getFifty())));
+	}
+
+	@Test
+	public void cashAvailable() throws Exception {
+		assertEquals(notesInventry.getTwenty() + notesInventry.getFifty(),
+				cashUtil.strToInt(Integer.toString(notesInventry.getTwenty()))
+						+ cashUtil.strToInt(Integer.toString(notesInventry.getFifty())));
+	}
+
+	@Test
+	public void withdrawAmount() throws Exception {
+		String amount = "120";
+		Notes notes = new Notes();
+
+		notes.setFifty(2);
+		notes.setTwenty(1);
+
+		cashmanService.withdrawCash(notes);
+
+		assertEquals(57, notesInventry.getTwenty() + notesInventry.getFifty());
+
 	}
 
 	@Test
@@ -56,11 +79,9 @@ public class CashmanApplicationTests {
 		Notes notes = new Notes();
 		notes.setFifty(10);
 		notes.setTwenty(10);
-		
+
 		cashmanService.withdrawCash(notes);
-		
-		assertEquals(40, notesInventry.getTwenty()+notesInventry.getFifty());
+
+		assertEquals(40, notesInventry.getTwenty() + notesInventry.getFifty());
 	}
-
-
 }
