@@ -74,14 +74,4 @@ public class CashmanApplicationTests {
 
 	}
 
-	@Test
-	public void withdrawCashMethod() throws Exception {
-		Notes notes = new Notes();
-		notes.setFifty(10);
-		notes.setTwenty(10);
-
-		cashmanService.withdrawCash(notes);
-
-		assertEquals(40, notesInventry.getTwenty() + notesInventry.getFifty());
-	}
 }
