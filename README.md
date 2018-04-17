@@ -4,7 +4,7 @@ Please refer API use case name UserDocument.docx
 
 STEPS to start SpringBoot Application:
 
-STEP 1: git clone https://github.com/deepikakumari07/cashman.git
+STEP 1: git clone https://github.com/deepikakumari07/wnsCashman.git
 
 STEP 2: cd cashman
 
