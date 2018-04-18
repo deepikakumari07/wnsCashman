@@ -60,7 +60,7 @@ public class CashmanController {
 	
 	@RequestMapping(method=RequestMethod.GET,value = "/withdrawCash/{amount}", headers="Accept=application/json")
 	public NotesInventry withdrawAmount(@PathVariable String amount) throws Throwable {
-		//System.out.println("amount :"+amount);
+		System.out.println("amount :"+amount);
 		try {
 			cashmanService.withdrawAmount(amount);
 		}catch(Throwable e) {

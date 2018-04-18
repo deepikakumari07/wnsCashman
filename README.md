@@ -2,7 +2,7 @@
 
 Please refer API use case name UserDocument.docx
 
-STEPS to start SpringBoot Application :
+STEPS to start SpringBoot Application:
 
 STEP 1: git clone https://github.com/deepikakumari07/wnsCashman.git
 
